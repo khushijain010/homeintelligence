@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardian</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <style>
+    .dot { width: .6rem; height: .6rem; border-radius: 9999px; display: inline-block; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 min-h-screen">
+  <header class="bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="min-w-0">
+        <h1 class="text-lg font-semibold">Guardian</h1>
+        <p class="text-xs text-slate-400" id="home-name">Home incident response</p>
+      </div>
+      <div class="flex rounded-lg overflow-hidden border border-slate-600 text-sm" id="mode-switch">
+        <button data-mode="home" class="px-3 py-1.5">Home</button>
+        <button data-mode="away" class="px-3 py-1.5">Away</button>
+        <button data-mode="night" class="px-3 py-1.5">Night</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-4 space-y-6">
+    <!-- 1. Status bar -->
+    <section id="status" class="rounded-xl p-4 shadow-sm bg-white"></section>
+
+    <!-- 2. Devices -->
+    <section>
+      <h2 class="font-semibold mb-2">Devices</h2>
+      <p class="text-xs text-slate-500 mb-2">Ring devices run on the ring-sandbox emulator (real Partner API shape). Items marked Simulated are virtual.</p>
+      <div id="devices" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+    </section>
+
+    <!-- 3. Incidents -->
+    <section>
+      <h2 class="font-semibold mb-2">Incidents</h2>
+      <div id="incidents" class="space-y-3"></div>
+    </section>
+
+    <!-- 4. Care visits -->
+    <section>
+      <h2 class="font-semibold mb-2">Care visits <span class="text-xs font-normal text-slate-500">(last 7 days)</span></h2>
+      <div class="bg-white rounded-xl shadow-sm overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-left text-slate-500 border-b">
+            <tr><th class="p-2">Date</th><th class="p-2">Caregiver</th><th class="p-2">Window</th><th class="p-2">Arrived</th><th class="p-2">Left</th><th class="p-2">Minutes</th><th class="p-2">Status</th></tr>
+          </thead>
+          <tbody id="visits"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. Demo panel -->
+    <section class="bg-white rounded-xl shadow-sm p-4">
+      <h2 class="font-semibold mb-1">Demo <span class="ml-1 text-xs font-medium bg-amber-100 text-amber-800 rounded px-1.5 py-0.5">Simulated</span></h2>
+      <p class="text-xs text-slate-500 mb-3">Each scenario resets the home first, then injects Ring events into the emulator.</p>
+      <div id="demo" class="flex flex-wrap gap-2"></div>
+    </section>
+  </main>
+
+  <div id="toasts" class="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-96 space-y-2 z-50"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

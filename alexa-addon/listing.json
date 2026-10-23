@@ -1,0 +1,29 @@
+{
+  "name": "Guardian",
+  "shortDescription": "Ask how things are at home, hear evidence-backed incident reports, and approve safety actions like shutting off the water.",
+  "fullDescription": "Guardian watches a family home through its Ring devices and responds to incidents such as water leaks, unexpected entries and missed caregiver visits. With this add-on, family members can ask Alexa how things are at home, hear what happened during an incident, check whether the caregiver came, and approve or reject an action Guardian has proposed, such as shutting off the water.\n\nGuardian is built to be honest and careful. Every report states only what the home's devices recorded. Guardian's safety policy decides every action: approving by voice passes on your decision, and Guardian still re-checks its rules before acting and confirms afterwards whether the action worked. Guardian never unlocks doors, never disarms alarms, never uses facial recognition, and never claims to have called emergency services.\n\nThis is a hackathon prototype. Some devices in the demo home (the water valve, thermostat, smart plug and smoke alarm) are simulated and are labelled as such.",
+  "examplePhrases": [
+    "Ask Guardian how things are at home.",
+    "Ask Guardian what happened with the water leak.",
+    "Ask Guardian to approve shutting off the water.",
+    "Ask Guardian how Mom is doing today."
+  ],
+  "privacyPolicyPath": "/legal/privacy",
+  "termsOfUsePath": "/legal/terms",
+  "mcpServerPath": "/mcp",
+  "icons": {
+    "72": "assets/icon-72.png",
+    "64": "assets/icon-64.png",
+    "88": "assets/icon-88.png",
+    "126": "assets/icon-126.png",
+    "180": "assets/icon-180.png",
+    "241": "assets/icon-241.png"
+  },
+  "carouselImage": "assets/carousel-600x900.png",
+  "oauth": {
+    "authorizationUrlPath": "/oauth/authorize",
+    "tokenUrlPath": "/oauth/token",
+    "scopes": ["guardian.read", "guardian.act"],
+    "codeChallengeMethod": "S256"
+  }
+}
